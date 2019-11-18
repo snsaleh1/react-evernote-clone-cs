@@ -8,7 +8,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { removeHTMLTags } from '../helpers';
 
 class SidebarItemComponent extends React.Component {
-    constructor {
+    constructor() {
         super();
     }
     render() {
