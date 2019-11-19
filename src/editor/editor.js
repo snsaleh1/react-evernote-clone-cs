@@ -15,13 +15,31 @@ class EditorComponent extends React.Component {
             id: ''
         };
     }
+
+    componentDidMount = () => {
+        this.setState({
+            text: this.props.selectedNote.body,
+            title: this.props.selectedNote.title,
+            id: this.props.selectedNote.id
+        });
+    }
+    componentDidUpdate = () => {
+        if(this.props.selectedNote.id !== this.state.id){
+            this.setState({
+                text: this.props.selectedNote.body,
+                title: this.props.selectedNote.title,
+                id: this.props.selectedNote.id
+            });
+        }
+    }
     render(){
 
         const { classes } = this.props;
 
         return(
             <div className = {classes.editorContainer}>
-                <ReactQuill value={this.state.text}
+                <ReactQuill 
+                value={this.state.text}
                 onChange={this.updateBody}>
                 </ReactQuill>
             </div>
