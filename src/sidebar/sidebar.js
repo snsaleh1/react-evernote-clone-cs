@@ -24,7 +24,7 @@ class SidebarComponent extends React.Component {
                 <Button
                 onClick={this.newNoteBtnClick}
                 className={classes.newNoteBtn}>
-                    New Note
+                    {this.state.addingNote ? 'Cancel' : 'New Note'}
                 </Button>
                 {
                   this.state.addingNote ?
