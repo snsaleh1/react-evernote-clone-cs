@@ -42,7 +42,7 @@ class SidebarComponent extends React.Component {
     }
 
     newNoteBtnClick = () => {
-        console.log('NEW BTN CLICKED');
+        this.setState({ addingNote: !this.state.addingNote });
     }
     updateTitle = (txt) => {
         console.log('HERE IT IS: ', txt);
